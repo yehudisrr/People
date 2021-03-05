@@ -1,0 +1,55 @@
+﻿
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <form method="post" action="/home/add">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Age</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" name="people[0].firstName" placeholder="First Name" class="form-control" />
+                        </td>
+                        <td>
+                            <input type="text" name="people[0].lastName" placeholder="Last Name" class="form-control" />
+                        </td>
+                        <td>
+                            <input type="text" name="people[0].age" placeholder="Age" class="form-control" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="people[1].firstName" placeholder="First Name" class="form-control" />
+                        </td>
+                        <td>
+                            <input type="text" name="people[1].lastName" placeholder="Last Name" class="form-control" />
+                        </td>
+                        <td>
+                            <input type="text" name="people[1].age" placeholder="Age" class="form-control" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="people[2].firstName" placeholder="First Name" class="form-control" />
+                        </td>
+                        <td>
+                            <input type="text" name="people[2].lastName" placeholder="Last Name" class="form-control" />
+                        </td>
+                        <td>
+                            <input type="text" name="people[2].age" placeholder="Age" class="form-control" />
+                        </td>
+                    </tr>
+                    <tr>
+
+                </tbody>
+            </table>
+            <button class="btn btn-danger bg-success btn-lg btn-block">Add All</button>
+        </form>
+    </div>
+</div>
+
