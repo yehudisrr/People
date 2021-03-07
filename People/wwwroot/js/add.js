@@ -16,7 +16,7 @@
                 </td>
             </tr>
 </table>`);
-
+        
         return false;
     });
 });

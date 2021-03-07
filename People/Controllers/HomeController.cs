@@ -41,7 +41,13 @@ namespace People.Controllers
                 db.AddPerson(person);
             }
 
-            TempData["message"] = "People added successfully!";
+            string text = "people";
+            if(people.Count == 1)
+            {
+                text = "person";
+            }
+            TempData["message"] = $"{people.Count} {text} added successfully!";
+
             return Redirect("/Home/Index");
         }
 
