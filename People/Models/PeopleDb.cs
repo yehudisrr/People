@@ -20,12 +20,12 @@ namespace People.Models
             using var connection = new SqlConnection(_connectionString);
             using var command = connection.CreateCommand();
             command.CommandText = "INSERT INTO People (FirstName, LastName, Age) " +
-                                  "VALUES (@firstName, @lastName, @age) SELECT SCOPE_IDENTITY()";
+                                  "VALUES (@firstName, @lastName, @age)";
             command.Parameters.AddWithValue("@firstName", person.FirstName);
             command.Parameters.AddWithValue("@lastName", person.LastName);
             command.Parameters.AddWithValue("@age", person.Age);
             connection.Open();
-            person.Id = (int)(decimal)command.ExecuteScalar();
+            command.ExecuteNonQuery();
         }
 
         public List<Person> GetPeople()
@@ -47,16 +47,6 @@ namespace People.Models
                 });
             }
             return people;
-        }
-    
-        public void Delete(int id)
-        {
-            using var connection = new SqlConnection(_connectionString);
-            using var command = connection.CreateCommand();
-            command.CommandText = "DELETE FROM People WHERE Id = @id";
-            command.Parameters.AddWithValue("@id", id);
-            connection.Open();
-            command.ExecuteNonQuery();
         }
 
     }
